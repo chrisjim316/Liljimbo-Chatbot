@@ -47,6 +47,14 @@ def webhook():
 						response = "Ok. I will send you {} news".format(str(value))
 					elif entity == 'location':
 						response = "{0} is a beautiful place! I'm from London.".format(str(value))
+                    elif entity == 'destroyer':
+                        response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
+                    elif entity == 'contact_name':
+                        response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
+                    elif entity == 'creator':
+                        response = "I am designed by Chris, Brandon, Jardin and Hristo."
+                    elif entity == 'functions':
+                        response = "I am here to provide information regarding First-Aid."
 
 					if response == None:
 						response = "Sorry, I do not understand."
