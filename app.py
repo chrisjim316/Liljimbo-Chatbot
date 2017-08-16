@@ -47,6 +47,8 @@ def webhook():
 						response = "Ok. I will send you {} news".format(str(value))
 					elif entity == 'location':
 						response = "{0} is a beautiful place! I'm from London.".format(str(value))
+					elif entity == 'Yuki_Chiu':
+						response = "Today's Yuki's birthday!! Happy Happy Birthday! You are beautiful and elegant both on the inside and outside, don't let anybody tell you different. You are made of Stanford material and I believe you can do it! Never give up! I will always be here for you. Now let's enjoy the dinner shall we ;) "
 					elif entity == 'destroyer':
 						response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
 					elif entity == 'contact_name':
