@@ -5,7 +5,7 @@ from pymessenger import Bot
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAA9JoGyk6AMp2PI9RyNSovR5Ip8X8p4OAyy06DLxZAiQUJgoe8plAjhibJMLXIgw39m7ZCkVYjKRZC3BaXLFvkzMymePtZAlIkVca6pee06oGhJDivT24l35TC3IOH0m2zBcfNQyUKFDnXssm0564unb3TEztQZDZD"
+PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAPEk7igKH06ShSiaHHvAWOFi5vZBdoGh8iZBMA9xtQ4Cma5aWQ20cIHx2doHcWloACW4MZBhUZBZCKUSLUD2KougLW5jEtjy1ekBPOfWL4SkDXJbKkc5ksUyznMTZCv3214pwKjza63cNtRlYSLZBBLLQ2FMo7zYQZDZD"
 
 bot = Bot(PAGE_ACCESS_TOKEN)
 
@@ -55,7 +55,8 @@ def webhook():
 						response = "I am designed by Chris, Brandon, Jardin and Hristo."
 					elif entity == 'functions':
 						response = "I am here to provide information regarding First-Aid."
-
+					elif entity == 'greetings':
+						response = "Hello there!"
 					if response == None:
 						response = "Sorry, I do not understand."
 
