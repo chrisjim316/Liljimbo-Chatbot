@@ -57,10 +57,8 @@ def webhook():
 						response = "I am here to provide information regarding First-Aid."
 					elif entity == 'greetings':
 						response = "Hello there!"
-					elif entity == 'Yuki_Chiu':
-						response = "Today's Yuki's birthday!! Happy Happy Birthday! You are beautiful and elegant both on the inside and outside, don't let anybody tell you different. You are made of Stanford material and I believe you can do it! Never give up! I will always be here for you. Now let's enjoy the dinner shall we ;)"
 					if response == None:
-						response = "Sorry, I do not understand."
+						response = "That is an interesting remark."
 
 					bot.send_text_message(sender_id, response)
 
