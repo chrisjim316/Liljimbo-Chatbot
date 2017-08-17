@@ -58,7 +58,7 @@ def webhook():
 					elif entity == 'greetings':
 						response = "Hello there!"
 					if response == None:
-						response = "That is an interesting remark."
+						response = "Interesting..."
 
 					bot.send_text_message(sender_id, response)
 
