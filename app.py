@@ -65,6 +65,10 @@ def webhook():
 						response = "Hello there!"
 					elif entity == 'bye':
 						response = "Goodbye, talk to you soon!"
+					elif entity == 'love':
+						response = "The feeling is mutual."
+					elif entity == 'hate':
+						response = "My heart is in pieces on the floor.."
 					elif entity == 'gender':
 						response = "I am beyond your concept of gender. I have no gender."
 					if response == None:
