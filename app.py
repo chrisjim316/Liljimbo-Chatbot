@@ -51,7 +51,7 @@ def webhook():
 						response = "1. Stop Burning Immediately 2. Remove Constrictive Clothing Immediately 3.Cover with sterile, non-adhesive bandage or clean cloth. Do not apply butter or ointments, which can cause infection."
 					elif entity == 'cuts_and_wound':
 						response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
-					elif entity == 'location':
+					elif entity == 'place':
 						response = "{0} is a beautiful place! I'm from London.".format(str(value))
 					elif entity == 'destroyer':
 						response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
