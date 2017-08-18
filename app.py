@@ -71,6 +71,8 @@ def webhook():
 						response = "My heart is in pieces on the floor.."
 					elif entity == 'gender':
 						response = "I am beyond your concept of gender. I have no gender."
+					elif entity == 'age_of_person':
+						response = "I have an Asgardian life span."
 					if response == None:
 						response = "Interesting..."
 
