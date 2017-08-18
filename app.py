@@ -57,6 +57,8 @@ def webhook():
 						response = "I am here to provide information regarding First-Aid."
 					elif entity == 'greetings':
 						response = "Hello there!"
+					elif entity == 'gender':
+						response = "I am beyond your concept of gender. I have no gender."
 					if response == None:
 						response = "Interesting..."
 
