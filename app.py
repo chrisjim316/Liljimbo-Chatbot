@@ -58,11 +58,13 @@ def webhook():
 					elif entity == 'contact_name':
 						response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
 					elif entity == 'creator':
-						response = "He's one of my creators. I am designed by Chris, Brandon, Jardin and Hristo."
+						response = "I am designed by Chris, Brandon, Jardin and Hristo."
 					elif entity == 'functions':
 						response = "I am here to provide information regarding First-Aid."
 					elif entity == 'greetings':
 						response = "Hello there!"
+					elif entity == 'bye':
+						response = "Goodbye, talk to you soon!"
 					elif entity == 'gender':
 						response = "I am beyond your concept of gender. I have no gender."
 					if response == None:
