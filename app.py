@@ -1,6 +1,6 @@
 import os, sys
 from flask import Flask, request
-from utils import wit_response, get_news_elements
+from utils import wit_response
 from pymessenger import Bot
 
 app = Flask(__name__)
@@ -40,12 +40,17 @@ def webhook():
 					else:
 						messaging_text = 'no text'
 
-					entity, value = wit_response(messaging_text)
-					categories = wit_response(messaging_text)
-					elements = get_news_elements(categories)
+					response = None
 
-					if entity == 'newstype':
-						response = "Ok. I will send you {} news".format(str(value))
+					entity, value = wit_response(messaging_text)
+					if entity == 'thanks':
+						response = "My pleasure. Always happy to help."
+					elif entity == 'help':
+						response = "Please indicate and type your situation. - burns - cuts and wound"
+					elif entity == 'burns':
+						response = "1. Stop Burning Immediately 2. Remove Constrictive Clothing Immediately 3.Cover with sterile, non-adhesive bandage or clean cloth. Do not apply butter or ointments, which can cause infection."
+					elif entity == 'cuts and wound':
+						response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 					elif entity == 'location':
 						response = "{0} is a beautiful place! I'm from London.".format(str(value))
 					elif entity == 'destroyer':
@@ -53,7 +58,7 @@ def webhook():
 					elif entity == 'contact_name':
 						response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
 					elif entity == 'creator':
-						response = "I am designed by Chris, Brandon, Jardin and Hristo."
+						response = "He's one of my creators. I am designed by Chris, Brandon, Jardin and Hristo."
 					elif entity == 'functions':
 						response = "I am here to provide information regarding First-Aid."
 					elif entity == 'greetings':
@@ -64,7 +69,6 @@ def webhook():
 						response = "Interesting..."
 
 					bot.send_text_message(sender_id, response)
-					bot.send_generic_message(sender_id, elements)
 
 	return "ok", 200
 
