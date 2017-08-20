@@ -54,7 +54,6 @@ def webhook():
 						response = "Please indicate and type your situation. - burns - cuts and wound"
 					elif entity == 'burns':
 						burn(sender_id, entity, value)
-						exit()
 					elif entity == 'cuts_and_wound':
 						response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 					elif entity == 'place':
