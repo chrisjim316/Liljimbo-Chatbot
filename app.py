@@ -1,7 +1,12 @@
-import os, sys
+import os
+import sys
 from flask import Flask, request
 from utils import wit_response
 from pymessenger import Bot
+
+# used for debugging
+import logging
+logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(asctime)s - %(levelname)s- %(message)s')
 
 app = Flask(__name__)
 
@@ -13,17 +18,17 @@ bot = Bot(PAGE_ACCESS_TOKEN)
 @app.route('/', methods=['GET'])
 def verify():
 	# Webhook verification
-    if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
-        if not request.args.get("hub.verify_token") == "hello":
-            return "Verification token mismatch", 403
-        return request.args["hub.challenge"], 200
-    return "Hello world", 200
+	if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
+		if not request.args.get("hub.verify_token") == "hello":
+			return "Verification token mismatch", 403
+		return request.args["hub.challenge"], 200
+	return "Hello world", 200
 
 
 @app.route('/', methods=['POST'])
 def webhook():
 	data = request.get_json()
-	log(data)
+	logging.debug(data)
 
 	if data['object'] == 'page':
 		for entry in data['entry']:
@@ -31,7 +36,7 @@ def webhook():
 
 				# IDs
 				sender_id = messaging_event['sender']['id']
-				recipient_id = messaging_event['recipient']['id']
+				# recipient_id = messaging_event['recipient']['id']     This variable isn't used so commented out.
 
 				if messaging_event.get('message'):
 					# Extracting text message
@@ -48,7 +53,8 @@ def webhook():
 					elif entity == 'help':
 						response = "Please indicate and type your situation. - burns - cuts and wound"
 					elif entity == 'burns':
-						response = "1. Stop Burning Immediately 2. Remove Constrictive Clothing Immediately 3.Cover with sterile, non-adhesive bandage or clean cloth. Do not apply butter or ointments, which can cause infection."
+						burn(sender_id, entity, value)
+						exit()
 					elif entity == 'cuts_and_wound':
 						response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 					elif entity == 'place':
@@ -78,10 +84,19 @@ def webhook():
 
 	return "ok", 200
 
-def log(message):
-	print(message)
-	sys.stdout.flush()
+
+def burn(entity, value, sender_id):
+	response = "1. Stop Burning Immediately 2." \
+	           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
+	           " non-adhesive bandage or clean cloth. Do not apply butter or" \
+	           " ointments, which can cause infection."
+
+	bot.send_text_message(sender_id, response)
 
 
+
+def exit()
+	# closes program
+	sys.exit(0)
 if __name__ == "__main__":
-	app.run(debug = True, port = 80)
+	app.run(debug=True, port=80)
