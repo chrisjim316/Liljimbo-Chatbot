@@ -27,76 +27,79 @@ def verify():
 
 @app.route('/', methods=['POST'])
 def webhook():
-	data = request.get_json()
-	logging.debug(data)
+	def main()
+		data = request.get_json()
+		logging.debug(data)
 
-	if data['object'] == 'page':
-		for entry in data['entry']:
-			for messaging_event in entry['messaging']:
+		if data['object'] == 'page':
+			for entry in data['entry']:
+				for messaging_event in entry['messaging']:
 
-				# IDs
-				sender_id = messaging_event['sender']['id']
-				# recipient_id = messaging_event['recipient']['id']     This variable isn't used so commented out.
+					# IDs
+					sender_id = messaging_event['sender']['id']
+					# recipient_id = messaging_event['recipient']['id']     This variable isn't used so commented out.
 
-				if messaging_event.get('message'):
-					# Extracting text message
-					if 'text' in messaging_event['message']:
-						messaging_text = messaging_event['message']['text']
-					else:
-						messaging_text = 'no text'
+					if messaging_event.get('message'):
+						# Extracting text message
+						if 'text' in messaging_event['message']:
+							messaging_text = messaging_event['message']['text']
+						else:
+							messaging_text = 'no text'
 
-					response = None
+						response = None
 
-					entity, value = wit_response(messaging_text)
-					if entity == 'thanks':
-						response = "My pleasure. Always happy to help."
-					elif entity == 'help':
-						response = "Please indicate and type your situation. - burns - cuts and wound"
-					elif entity == 'burns':
-						burn(sender_id, entity, value)
-						exit()
-					elif entity == 'cuts_and_wound':
-						response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
-					elif entity == 'place':
-						response = "{0} is a beautiful place! I'm from London.".format(str(value))
-					elif entity == 'destroyer':
-						response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
-					elif entity == 'contact_name':
-						response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
-					elif entity == 'creator':
-						response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
-					elif entity == 'functions':
-						response = "I am here to provide information regarding First-Aid."
-					elif entity == 'greetings':
-						response = "Hello there!"
-					elif entity == 'bye':
-						response = "Goodbye, talk to you soon!"
-					elif entity == 'love':
-						response = "The feeling is mutual."
-					elif entity == 'hate':
-						response = "My heart is in pieces on the floor.."
-					elif entity == 'gender':
-						response = "I am beyond your concept of gender. I have no gender."
-					if response == None:
-						response = "Interesting..."
+						entity, value = wit_response(messaging_text)
+						if entity == 'thanks':
+							response = "My pleasure. Always happy to help."
+						elif entity == 'help':
+							response = "Please indicate and type your situation. - burns - cuts and wound"
+						elif entity == 'burns':
+							burn(sender_id, entity, value)
+						elif entity == 'cuts_and_wound':
+							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
+						elif entity == 'place':
+							response = "{0} is a beautiful place! I'm from London.".format(str(value))
+						elif entity == 'destroyer':
+							response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
+						elif entity == 'contact_name':
+							response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
+						elif entity == 'creator':
+							response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
+						elif entity == 'functions':
+							response = "I am here to provide information regarding First-Aid."
+						elif entity == 'greetings':
+							response = "Hello there!"
+						elif entity == 'bye':
+							response = "Goodbye, talk to you soon!"
+						elif entity == 'love':
+							response = "The feeling is mutual."
+						elif entity == 'hate':
+							response = "My heart is in pieces on the floor.."
+						elif entity == 'gender':
+							response = "I am beyond your concept of gender. I have no gender."
+						if response == None:
+							response = "Interesting..."
 
-					bot.send_text_message(sender_id, response)
+						bot.send_text_message(sender_id, response)
 
+
+	def burn(entity, value, sender_id):
+		response = "1. Stop Burning Immediately 2." \
+		           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
+		           " non-adhesive bandage or clean cloth. Do not apply butter or" \
+		           " ointments, which can cause infection."
+
+		bot.send_text_message(sender_id, response)
+
+	main()
 	return "ok", 200
 
 
-def burn(entity, value, sender_id):
-	response = "1. Stop Burning Immediately 2." \
-	           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
-	           " non-adhesive bandage or clean cloth. Do not apply butter or" \
-	           " ointments, which can cause infection."
-
-	bot.send_text_message(sender_id, response)
 
 
-
-def exit()
+def exit():
 	# closes program
 	sys.exit(0)
+
 if __name__ == "__main__":
 	app.run(debug=True, port=80)
