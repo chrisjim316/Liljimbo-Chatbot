@@ -66,7 +66,7 @@ def webhook():
 					elif entity == 'creator':
 						response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
 					elif entity == 'functions':
-						response = "I am here to provide information regarding First-Aid."
+						response = "I am here to provide First-Aid treatment instructions."
 					elif entity == 'greetings':
 						response = "Hello there!"
 					elif entity == 'bye':
@@ -74,7 +74,7 @@ def webhook():
 					elif entity == 'love':
 						response = "The feeling is mutual."
 					elif entity == 'hate':
-						response = "My heart is in pieces on the floor.."
+						response = "My heart is in pieces on the floor..."
 					elif entity == 'gender':
 						response = "I am beyond your concept of gender. I have no gender."
 					if response == None:
@@ -84,7 +84,6 @@ def webhook():
 
 	return "ok", 200
 
-
 def burn(entity, value, sender_id):
 	response = "1. Stop Burning Immediately 2." \
 	           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
@@ -93,9 +92,7 @@ def burn(entity, value, sender_id):
 
 	bot.send_text_message(sender_id, response)
 
-
-
-def exit()
+def exit():
 	# closes program
 	sys.exit(0)
 if __name__ == "__main__":

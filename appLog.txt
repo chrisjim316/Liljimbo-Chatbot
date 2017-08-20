@@ -1,0 +1,22 @@
+ 2017-08-21 00:11:12,743 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:13,720 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:13,724 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:13,731 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:11:28,033 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:28,996 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:28,999 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:29,007 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:11:41,332 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:42,373 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:42,376 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:42,384 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:19,527 - INFO-  * Restarting with stat
+ 2017-08-21 00:12:20,517 - WARNING-  * Debugger is active!
+ 2017-08-21 00:12:20,520 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:12:20,528 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:23,706 - INFO-  * Detected change in 'C:\\Users\\Chris Jim\\Desktop\\GitHub\\Local GitHub\\Liljimbo-Chatbot\\app.py', reloading
+ 2017-08-21 00:12:23,744 - INFO-  * Restarting with stat
+ 2017-08-21 00:12:24,772 - WARNING-  * Debugger is active!
+ 2017-08-21 00:12:24,776 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:12:24,783 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:39,587 - INFO-  * Restarting with stat
