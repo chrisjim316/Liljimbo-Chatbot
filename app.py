@@ -67,7 +67,7 @@ def webhook():
 						elif entity == 'creator':
 							response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
 						elif entity == 'functions':
-							response = "I am here to provide information regarding First-Aid."
+							response = "I am here to provide First-Aid treatment instructions. Please note that I cannot call the ambulance for you."
 						elif entity == 'greetings':
 							response = "Hello there!"
 						elif entity == 'bye':
