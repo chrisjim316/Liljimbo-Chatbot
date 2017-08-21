@@ -53,7 +53,7 @@ def webhook():
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
-							response = "Please indicate and type your situation. - burns - cuts and wound"
+							response = "Please indicate and type your situation. • burns • cuts and wound"
 						elif entity == 'burns':
 							burn(sender_id, entity, value)
 						elif entity == 'cuts_and_wound':
