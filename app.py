@@ -51,9 +51,6 @@ def webhook():
 						images = []
 						entity, value = wit_response(messaging_text)
 						if entity == 'thanks':
-							images.append("https://media.giphy.com/media/25coXyEcFLDUY/giphy.gif")
-							images.append("https://media.giphy.com/media/l41m0vdJHMZyhiRDW/giphy.gif")
-							images.append("https://media.giphy.com/media/tXTqLBYNf0N7W/giphy.gif")
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
 							response = "Please indicate and type your situation. - burns - cuts and wound"
@@ -71,9 +68,6 @@ def webhook():
 							response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
 						elif entity == 'contact_name':
 							response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
-							images.append("https://media.giphy.com/media/3fhmGbRTOX1fO/giphy.gif")
-							images.append("https://media.giphy.com/media/3o7buga7zWQRfAj4Na/giphy.gif")
-							images.append("https://media.giphy.com/media/l4FGAknYu7gKbSuME/giphy.gif")
 						elif entity == 'creator':
 							response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
 						elif entity == 'functions':
@@ -98,7 +92,6 @@ def webhook():
 							images.append("https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif")
 							response = "My heart is in pieces on the floor." + u'\U0001F625'
 						elif entity == 'gender':
-							images.append("https://media.giphy.com/media/xT8qB8l8ngXHEVAuR2/giphy.gif")
 							response = "I am beyond your concept of gender. I have no gender."
 
 						if response == None:
