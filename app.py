@@ -11,11 +11,9 @@ logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(ascti
 
 app = Flask(__name__)
 
-#PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
-PAGE_ACCESS_TOKEN = "EAACQqp5ZCPhwBAGZBYCTFK9Hc5zUTdx0Eaq7lE4yGCqCNdFw7TdzXndtu4BHUUekDPjJR1YgOPOdZBvCfwtFg8BD1bQYxZAICMMRqkbgFJUHJWCcmdox7thZCadNZAgVrVIrB9jfYyzv2gMeUrtPFWFDRJx0YMoq3lSYW318YOzgZDZD"
+PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
 
 bot = Bot(PAGE_ACCESS_TOKEN)
-
 
 @app.route('/', methods=['GET'])
 def verify():
@@ -25,7 +23,6 @@ def verify():
 			return "Verification token mismatch", 403
 		return request.args["hub.challenge"], 200
 	return "Hello world", 200
-
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -113,7 +110,6 @@ def webhook():
 						#bot.send_video_url(sender_id, )
 
 
-
 	def burn(entity, value, sender_id):
 		response = "1. Stop Burning Immediately 2." \
 		           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
@@ -121,7 +117,6 @@ def webhook():
 		           " ointments, which can cause infection."
 
 		bot.send_text_message(sender_id, response)
-
 
 	main()
 
