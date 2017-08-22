@@ -1,4 +1,3 @@
-import os
 import sys
 from flask import Flask, request
 from utils import wit_response
@@ -49,7 +48,7 @@ def webhook():
 
 						response = None
 
-						entity, value = wit_response(messaging_text)
+						entity, value = wit_response(messaging_text) # so this is parsing user text using wit.ai
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
