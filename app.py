@@ -58,7 +58,10 @@ def webhook():
 						elif entity == 'help':
 							response = "Please indicate and type your situation. - burns - cuts and wound"
 						elif entity == 'burns':
-							burn(sender_id, entity, value)
+							response = "1. Stop Burning Immediately 2." \
+							           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
+							           " non-adhesive bandage or clean cloth. Do not apply butter or" \
+							           " ointments, which can cause infection."
 						elif entity == 'cuts_and_wound':
 							images.append("https://s-media-cache-ak0.pinimg.com/originals/6d/95/d0/6d95d0db65621cef70e9e42bcc21a3cc.jpg")
 							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
@@ -109,12 +112,6 @@ def webhook():
 
 						#bot.send_video_url(sender_id, )
 
-
-	def burn(entity, value, sender_id):
-		response = "1. Stop Burning Immediately 2." \
-		           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
-		           " non-adhesive bandage or clean cloth. Do not apply butter or" \
-		           " ointments, which can cause infection."
 
 		bot.send_text_message(sender_id, response)
 
