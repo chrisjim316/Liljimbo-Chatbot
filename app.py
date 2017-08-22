@@ -112,9 +112,6 @@ def webhook():
 
 						#bot.send_video_url(sender_id, )
 
-
-		bot.send_text_message(sender_id, response)
-
 	main()
 
 	return "ok", 200
