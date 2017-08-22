@@ -10,7 +10,8 @@ logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(ascti
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
+#PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
+PAGE_ACCESS_TOKEN = "EAACQqp5ZCPhwBAGZBYCTFK9Hc5zUTdx0Eaq7lE4yGCqCNdFw7TdzXndtu4BHUUekDPjJR1YgOPOdZBvCfwtFg8BD1bQYxZAICMMRqkbgFJUHJWCcmdox7thZCadNZAgVrVIrB9jfYyzv2gMeUrtPFWFDRJx0YMoq3lSYW318YOzgZDZD"
 
 bot = Bot(PAGE_ACCESS_TOKEN)
 
@@ -53,10 +54,11 @@ def webhook():
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
-							response = "Please indicate and type your situation. • burns • cuts and wound"
+							response = "Please indicate and type your situation. - burns - cuts and wound"
 						elif entity == 'burns':
 							burn(sender_id, entity, value)
 						elif entity == 'cuts_and_wound':
+							bot.send_image_url(sender_id, "https://s-media-cache-ak0.pinimg.com/originals/6d/95/d0/6d95d0db65621cef70e9e42bcc21a3cc.jpg");
 							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 						elif entity == 'place':
 							response = "{0} is a beautiful place! I'm from London.".format(str(value))
@@ -73,9 +75,11 @@ def webhook():
 						elif entity == 'bye':
 							response = "Goodbye, talk to you soon!"
 						elif entity == 'love':
-							response = "The feeling is mutual."
+							bot.send_image_url(sender_id, "https://media.giphy.com/media/2dQ3FMaMFccpi/giphy.gif");
+							response = "The feeling is mutual." + u'\U0001F60D'
 						elif entity == 'hate':
-							response = "My heart is in pieces on the floor.."
+							bot.send_image_url(sender_id, "https://media.giphy.com/media/3o6ZsY5h1VxSirZQI0/giphy.gif");
+							response = "My heart is in pieces on the floor." + u'\U0001F625'
 						elif entity == 'gender':
 							response = "I am beyond your concept of gender. I have no gender."
 						if response == None:
