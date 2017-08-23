@@ -1,4 +1,5 @@
 import sys
+import random
 from flask import Flask, request
 from utils import wit_response
 from pymessenger import Bot
@@ -13,7 +14,6 @@ PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZA
 
 bot = Bot(PAGE_ACCESS_TOKEN)
 
-
 @app.route('/', methods=['GET'])
 def verify():
 	# Webhook verification
@@ -22,7 +22,6 @@ def verify():
 			return "Verification token mismatch", 403
 		return request.args["hub.challenge"], 200
 	return "Hello world", 200
-
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -47,18 +46,24 @@ def webhook():
 							messaging_text = 'no text'
 
 						response = None
-
+						imageURL = None
+						images = []
 						entity, value = wit_response(messaging_text) # so this is parsing user text using wit.ai
+
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
-							response = "Please indicate and type your situation. - burns - cuts and wound"
+							response = "Please indicate and type your situation. • burns • cuts and wound"
 						elif entity == 'burns':
-							burn(sender_id, entity, value)
+							response = "1. Stop Burning Immediately 2." \
+							           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
+							           " non-adhesive bandage or clean cloth. Do not apply butter or" \
+							           " ointments, which can cause infection."
 						elif entity == 'cuts_and_wound':
+							images.append("https://s-media-cache-ak0.pinimg.com/originals/6d/95/d0/6d95d0db65621cef70e9e42bcc21a3cc.jpg")
 							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 						elif entity == 'place':
-							response = "{0} is a beautiful place! I'm from London.".format(str(value))
+							response = "I'm from London!"
 						elif entity == 'destroyer':
 							response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
 						elif entity == 'contact_name':
@@ -68,35 +73,41 @@ def webhook():
 						elif entity == 'functions':
 							response = "I am here to provide First-Aid treatment instructions. Please note that I cannot call the ambulance for you."
 						elif entity == 'greetings':
+							images.append("https://media.giphy.com/media/Cmr1OMJ2FN0B2/giphy.gif")
+							images.append("https://media.giphy.com/media/cE02lboc8JPO/giphy.gif")
+							images.append("https://media.giphy.com/media/PfHrNe1cSKAjC/giphy.gif")
+							images.append("https://media.giphy.com/media/mW05nwEyXLP0Y/giphy.gif")
 							response = "Hello there!"
 						elif entity == 'bye':
 							response = "Goodbye, talk to you soon!"
 						elif entity == 'love':
-							response = "The feeling is mutual."
+							images.append("https://media.giphy.com/media/2dQ3FMaMFccpi/giphy.gif")
+							images.append("https://media.giphy.com/media/l4FGAknYu7gKbSuME/giphy.gif")
+							response = "The feeling is mutual." + u'\U0001F60D'
 						elif entity == 'hate':
-							response = "My heart is in pieces on the floor..."
+							images.append("https://media.giphy.com/media/3o6ZsY5h1VxSirZQI0/giphy.gif")
+							images.append("https://media.giphy.com/media/SjrCEiRgiT9pC/giphy.gif")
+							images.append("https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif")
+							images.append("https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif")
+							images.append("https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif")
+							response = "My heart is in pieces on the floor." + u'\U0001F625'
 						elif entity == 'gender':
 							response = "I am beyond your concept of gender. I have no gender."
+
 						if response == None:
 							response = "Interesting..."
 
+						if len(images) > 0:
+							imageURL = random.choice(images)
+
+						bot.send_image_url(sender_id, imageURL)
 						bot.send_text_message(sender_id, response)
 
-
-	def burn(entity, value, sender_id):
-		response = "1. Stop Burning Immediately 2." \
-		           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
-		           " non-adhesive bandage or clean cloth. Do not apply butter or" \
-		           " ointments, which can cause infection."
-
-		bot.send_text_message(sender_id, response)
+						#bot.send_video_url(sender_id, )
 
 	main()
+
 	return "ok", 200
-
-
-
-
 
 def exit():
 	# closes program
