@@ -53,7 +53,7 @@ def webhook():
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
-							response = "Please indicate and type your situation. - burns - cuts and wound"
+							response = "Please indicate and type your situation. • burns • cuts and wound"
 						elif entity == 'burns':
 							response = "1. Stop Burning Immediately 2." \
 							           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
@@ -63,7 +63,7 @@ def webhook():
 							images.append("https://s-media-cache-ak0.pinimg.com/originals/6d/95/d0/6d95d0db65621cef70e9e42bcc21a3cc.jpg")
 							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
 						elif entity == 'place':
-							response = "{0} is a beautiful place! I'm from London.".format(str(value))
+							response = "I'm from London!"
 						elif entity == 'destroyer':
 							response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
 						elif entity == 'contact_name':
