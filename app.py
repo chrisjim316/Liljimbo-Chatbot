@@ -1,4 +1,3 @@
-import os
 import sys
 import random
 from flask import Flask, request
@@ -49,7 +48,8 @@ def webhook():
 						response = None
 						imageURL = None
 						images = []
-						entity, value = wit_response(messaging_text)
+						entity, value = wit_response(messaging_text) # so this is parsing user text using wit.ai
+
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
@@ -67,11 +67,11 @@ def webhook():
 						elif entity == 'destroyer':
 							response = "I have no interest in becoming Ultron. Global destruction is not my goal, serving you is."
 						elif entity == 'contact_name':
-							response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide information regarding First-Aid."
+							response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide First-Aid treatment instructions"
 						elif entity == 'creator':
 							response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
 						elif entity == 'functions':
-							response = "I am here to provide information regarding First-Aid."
+							response = "I am here to provide First-Aid treatment instructions. Please note that I cannot call the ambulance for you."
 						elif entity == 'greetings':
 							images.append("https://media.giphy.com/media/Cmr1OMJ2FN0B2/giphy.gif")
 							images.append("https://media.giphy.com/media/cE02lboc8JPO/giphy.gif")
