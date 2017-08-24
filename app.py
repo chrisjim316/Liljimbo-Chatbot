@@ -53,7 +53,7 @@ def webhook():
 						if entity == 'thanks':
 							response = "My pleasure. Always happy to help."
 						elif entity == 'help':
-							response = "Please indicate and type your situation. • burns • cuts and wound"
+							response = "Please indicate and type your situation. • burns • cuts and wound • black eyes • bruises"
 						elif entity == 'burns':
 							response = "1. Stop Burning Immediately 2." \
 							           " Remove Constrictive Clothing Immediately 3.Cover with sterile," \
