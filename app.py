@@ -61,7 +61,18 @@ def webhook():
 							           " ointments, which can cause infection."
 						elif entity == 'cuts_and_wound':
 							images.append("https://s-media-cache-ak0.pinimg.com/originals/6d/95/d0/6d95d0db65621cef70e9e42bcc21a3cc.jpg")
-							response = "1. Stop the Bleeding 2. Clean and Protect 3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
+							response = "1. Stop the Bleeding 2. Clean and Protect " \
+							           "3. Put a sterile bandage on the area. In some people, antibiotic ointments may cause a rash. If this happens, stop using the ointment."
+						elif entity == 'bruises':
+							response = "1. Apply Ice - Wrap a cold pack in a towel or washcloth and hold it against the bruise for 10 to 15 minutes." \
+							           "2. Elevate the Area - If possible, raise the bruised area above the heart to reduce swelling." \
+							           "3. Reduce Pain"
+						elif entity == 'black_eye':
+							response = "1. Treat Symptoms - Apply ice to the area. Don't press on the eye." \
+							           "2. Get Medical Help - See a health care provider to make sure there is no further damage to the eye" \
+							           "3. Follow Up - Continue icing the area several times a day for 1 or 2 days." \
+							           "After 1 or 2 days, apply warm compresses to the bruised area instead." \
+							           "Depending on the injury, the provider may prescribe eye drops and recommend follow up with an eye doctor."
 						elif entity == 'place':
 							response = "I'm from London!"
 						elif entity == 'destroyer':
