@@ -74,13 +74,11 @@ def webhook():
 						elif entity == 'frostbite':
 							response = "1. Seek Medical Care Promptly" \
 							           " 2. Restore Warmth - Get the person to a warm place and remove any wet clothing." \
-							           " - Unless absolutely necessary, the person should not walk on frostbitten toes or feet." \
-							           " 3 Bandage the area - Put gauze or clean cotton balls between fingers or toes to keep them separated."
+							           " 3. Bandage the area - Put gauze or clean cotton balls between fingers or toes to keep them separated."
 						elif entity == 'heat_exhaustion':
 							response = "1. Lower Body Temperature - Get the person out of the heat and into a cool environment." \
 							           " 2. Rehydrate - Give cool, nonalcoholic and non-caffeinated beverages as long as the person is alert." \
-							           " 3. Rest - Give over-the-counter acetaminophen (Tylenol) if the person has a mild headache." \
-							           " 4. See a Health Care Provider if - Symptoms get worse or last more than an hour"
+							           " 3. Rest - Give over-the-counter acetaminophen (Tylenol) if the person has a mild headache." 
 						elif entity == 'place':
 							response = "I'm from London!"
 						elif entity == 'destroyer':

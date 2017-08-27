@@ -50,3 +50,7 @@
  2017-08-27 14:00:28,372 - WARNING-  * Debugger is active!
  2017-08-27 14:00:28,375 - INFO-  * Debugger PIN: 239-811-376
  2017-08-27 14:00:28,383 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-27 14:05:06,328 - INFO-  * Restarting with stat
+ 2017-08-27 14:05:07,321 - WARNING-  * Debugger is active!
+ 2017-08-27 14:05:07,325 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 14:05:07,333 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
