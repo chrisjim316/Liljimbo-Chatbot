@@ -78,7 +78,7 @@ def webhook():
 						elif entity == 'heat_exhaustion':
 							response = "1. Lower Body Temperature - Get the person out of the heat and into a cool environment." \
 							           " 2. Rehydrate - Give cool, nonalcoholic and non-caffeinated beverages as long as the person is alert." \
-							           " 3. Rest - Give over-the-counter acetaminophen (Tylenol) if the person has a mild headache." 
+							           " 3. Rest" 
 						elif entity == 'place':
 							response = "I'm from London!"
 						elif entity == 'destroyer':
