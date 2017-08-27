@@ -71,6 +71,16 @@ def webhook():
 							response = "1. Treat Symptoms - Apply ice to the area. Don't press on the eye." \
 							           " 2. Get Medical Help - See a health care provider to make sure there is no further damage to the eye" \
 							           " 3. Follow Up - Continue icing the area several times a day for 1 or 2 days."
+						elif entity == 'frostbite':
+							response = "1. Seek Medical Care Promptly" \
+							           " 2. Restore Warmth - Get the person to a warm place and remove any wet clothing." \
+							           " - Unless absolutely necessary, the person should not walk on frostbitten toes or feet." \
+							           " 3 Bandage the area - Put gauze or clean cotton balls between fingers or toes to keep them separated."
+						elif entity == 'heat_exhaustion':
+							response = "1. Lower Body Temperature - Get the person out of the heat and into a cool environment." \
+							           " 2. Rehydrate - Give cool, nonalcoholic and non-caffeinated beverages as long as the person is alert." \
+							           " 3. Rest - Give over-the-counter acetaminophen (Tylenol) if the person has a mild headache." \
+							           " 4. See a Health Care Provider if - Symptoms get worse or last more than an hour"
 						elif entity == 'place':
 							response = "I'm from London!"
 						elif entity == 'destroyer':
@@ -78,7 +88,7 @@ def webhook():
 						elif entity == 'contact_name':
 							response = "Nice to meet you. I am Liljimbo, a friendly chatbot designed to provide First-Aid treatment instructions"
 						elif entity == 'creator':
-							response = "I am designed by Chris, Brandon, Jardin and Hristo, a team based in London."
+							response = "I am designed by Chris, Brandon, and Jardin a team based in London."
 						elif entity == 'functions':
 							response = "I am here to provide First-Aid treatment instructions. Please note that I cannot call the ambulance for you."
 						elif entity == 'greetings':
@@ -101,7 +111,7 @@ def webhook():
 							images.append("https://media.giphy.com/media/3o6wrvdHFbwBrUFenu/giphy.gif")
 							response = "My heart is in pieces on the floor." + u'\U0001F625'
 						elif entity == 'gender':
-							response = "I am beyond your concept of gender. I have no gender."
+							response = "I am beyond your concept of gender."
 
 						if response == None:
 							response = "Interesting..."
