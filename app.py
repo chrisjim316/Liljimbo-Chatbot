@@ -3,6 +3,11 @@ from flask import Flask, request
 from utils import wit_response
 from pymessenger import Bot
 
+# this logs errors etc, use in place of log() function you made
+import logging
+logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='
+%(asctime)s - %(levelname)s - %(message)s')
+
 app = Flask(__name__)
 
 PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
@@ -17,13 +22,15 @@ def verify():
         if not request.args.get("hub.verify_token") == "hello":
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
+    logging.debug("sucessfuly verified")
     return "Hello world", 200
 
 
 @app.route('/', methods=['POST'])
 def webhook():
+    logging.debug("on webhook")
 	data = request.get_json()
-	log(data)
+	logging.debug(data)
 
 	if data['object'] == 'page':
 		for entry in data['entry']:
@@ -76,11 +83,10 @@ def webhook():
 
 					bot.send_text_message(sender_id, response)
 
+    logging.debug("Finished webhook")
+
 	return "ok", 200
 
-def log(message):
-	print(message)
-	sys.stdout.flush()
 
 
 if __name__ == "__main__":
