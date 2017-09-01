@@ -1,0 +1,60 @@
+ 2017-08-21 00:11:12,743 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:13,720 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:13,724 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:13,731 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:11:28,033 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:28,996 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:28,999 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:29,007 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:11:41,332 - INFO-  * Restarting with stat
+ 2017-08-21 00:11:42,373 - WARNING-  * Debugger is active!
+ 2017-08-21 00:11:42,376 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:11:42,384 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:19,527 - INFO-  * Restarting with stat
+ 2017-08-21 00:12:20,517 - WARNING-  * Debugger is active!
+ 2017-08-21 00:12:20,520 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:12:20,528 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:23,706 - INFO-  * Detected change in 'C:\\Users\\Chris Jim\\Desktop\\GitHub\\Local GitHub\\Liljimbo-Chatbot\\app.py', reloading
+ 2017-08-21 00:12:23,744 - INFO-  * Restarting with stat
+ 2017-08-21 00:12:24,772 - WARNING-  * Debugger is active!
+ 2017-08-21 00:12:24,776 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:12:24,783 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:12:39,587 - INFO-  * Restarting with stat
+ 2017-08-21 00:22:41,706 - INFO-  * Restarting with stat
+ 2017-08-21 00:22:42,689 - WARNING-  * Debugger is active!
+ 2017-08-21 00:22:42,692 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:22:42,700 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-21 00:25:01,905 - INFO-  * Restarting with stat
+ 2017-08-21 00:25:02,963 - WARNING-  * Debugger is active!
+ 2017-08-21 00:25:02,967 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-21 00:25:02,974 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-23 16:52:17,471 - INFO-  * Restarting with stat
+ 2017-08-23 16:52:18,450 - WARNING-  * Debugger is active!
+ 2017-08-23 16:52:18,465 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-23 16:52:18,465 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-24 12:33:04,616 - INFO-  * Restarting with stat
+ 2017-08-24 12:33:05,602 - WARNING-  * Debugger is active!
+ 2017-08-24 12:33:05,602 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-24 12:33:05,602 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-24 12:43:19,893 - INFO-  * Restarting with stat
+ 2017-08-27 13:58:22,595 - INFO-  * Restarting with stat
+ 2017-08-27 13:58:23,604 - WARNING-  * Debugger is active!
+ 2017-08-27 13:58:23,610 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 13:58:23,618 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-27 13:58:36,169 - INFO-  * Restarting with stat
+ 2017-08-27 13:58:37,146 - WARNING-  * Debugger is active!
+ 2017-08-27 13:58:37,149 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 13:58:37,157 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-27 14:00:16,401 - INFO-  * Restarting with stat
+ 2017-08-27 14:00:27,403 - INFO-  * Restarting with stat
+ 2017-08-27 14:00:28,372 - WARNING-  * Debugger is active!
+ 2017-08-27 14:00:28,375 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 14:00:28,383 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-27 14:05:06,328 - INFO-  * Restarting with stat
+ 2017-08-27 14:05:07,321 - WARNING-  * Debugger is active!
+ 2017-08-27 14:05:07,325 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 14:05:07,333 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
+ 2017-08-27 14:08:39,635 - INFO-  * Restarting with stat
+ 2017-08-27 14:08:40,603 - WARNING-  * Debugger is active!
+ 2017-08-27 14:08:40,606 - INFO-  * Debugger PIN: 239-811-376
+ 2017-08-27 14:08:40,614 - INFO-  * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
