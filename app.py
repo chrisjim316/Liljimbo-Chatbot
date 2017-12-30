@@ -13,6 +13,12 @@ logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(ascti
 
 app = Flask(__name__)
 
+with Open("tokens.txt") as file:
+	file_read = file.read()
+	file_read = file_read.split()
+	PAGE_ACCESS_TOKEN = file_read[0].split(" ")
+	PAGE_ACCESS_TOKEN = PAGE_ACCESS_TOKEN[1]
+
 PAGE_ACCESS_TOKEN = "EAAbUMFhFArYBAC4hWG5iwb7VzEkQbU9FMalQjACslYDN0vYMVTvzCdMIZAxsRShwhaLDCwq3J9utQBYQvo8ZCxkKeM4Ewseq1W9pLXALZAwZCrut1Gvgn6DLbuSDzUjZBq4z32YdHPYuvL73xZBPMXxDSSbdWElVqMu6dtxvEbwgZDZD"
 
 bot = Bot(PAGE_ACCESS_TOKEN)
