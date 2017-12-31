@@ -51,7 +51,6 @@ def receive_message(message):
     symptoms = parse_message(message)
 
 def parse_message(message):
-    import string
     # parses the message through wit.ai
     # when input is "I have a headache"
     # output is
@@ -79,6 +78,7 @@ def parse_message(message):
 
 
 def remove_articles(message):
+    # TODO I can probably turn this into a map / lambda functon. Would be more elegant, so figre this out.
     return_msg = []
     for i in message:
         if i not in ["and", "an", "a"]:
