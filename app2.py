@@ -67,11 +67,11 @@ def parse_message(message):
         return("Sorry, I do not understand what you said.")
     else:
         # gets rid of puncutation. So "headache." becomes "headache"
-        symptoms = symptoms.split(" ")
-        # turns it into a list of symptoms
+        symptoms = set(symptoms.split(" "))
+        # turns it into a set of symptoms
         symptoms = remove_articles(symptoms)
         # gers rid of article words
-        symptoms = list(map(lambda x: x.strip(",."), symptoms))
+        symptoms = set(map(lambda x: x.strip(",."), symptoms))
         # gets rid of puncuation
         logging.debug(symptoms)
         return symptoms
