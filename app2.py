@@ -30,22 +30,58 @@ TOKEN_NAME: TOKEN
 """
 from wit import Wit
 
+# used for debugging
+import logging
+logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(asctime)s - %(levelname)s- %(message)s')
+
 with open("tokens.txt") as file:
+    # gets tokens from token.txt
     file_read = file.read()
     file_read = file_read.split("\n")
     
     wit_token = file_read[1].split(" ")[1]
     # format to get a single token from the text file
 
+# Clients
+
 client = Wit(wit_token)
-client.message('set an alarm tomorrow at 7am')
 
 def receive_message(message):
+    logging.debug(message)
     symptoms = parse_message(message)
 
 def parse_message(message):
+    import string
     # parses the message through wit.ai
     # when input is "I have a headache"
     # output is
     # {"_text":"I have a headache","entities":{"symptom":[{"confidence":0.98805916237107,"value":"headache","type":"value"}]},"msg_id":"0gFLp4hHKeJKvwspJ"}
-    message = client.message(message)
+    resp = client.message(message)
+    confidence = resp["entities"]["symptom"][0]["confidence"]
+    symptoms = resp["entities"]["symptom"][0]["value"]
+    logging.debug(confidence)
+    logging.debug(symptoms)
+    if confidence < 0.70:
+        logging.debug("not an illness")
+        # deal with "hellos" etc in main part, if main doesnt know what they said it'll come here to check if its an illness
+        # if its not an illness, we do not know what they said.
+        return("Sorry, I do not understand what you said.")
+    else:
+        # gets rid of puncutation. So "headache." becomes "headache"
+        symptoms = symptoms.split(" ")
+        # turns it into a list of symptoms
+        symptoms = remove_articles(symptoms)
+        # gers rid of article words
+        symptoms = list(map(lambda x: x.strip(",."), symptoms))
+        # gets rid of puncuation
+        logging.debug(symptoms)
+        return symptoms
+
+
+def remove_articles(message):
+    return_msg = []
+    for i in message:
+        if i not in ["and", "an", "a"]:
+            return_msg.append(i)
+    return return_msg
+
