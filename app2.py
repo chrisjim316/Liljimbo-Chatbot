@@ -28,3 +28,24 @@ There is an offline build of app2, which makes it faster to test it.
 Also, tokens are no longer stored in python files. They are stored in a tokens.txt file with the format
 TOKEN_NAME: TOKEN
 """
+from wit import Wit
+
+with open("tokens.txt") as file:
+    file_read = file.read()
+    file_read = file_read.split("\n")
+    
+    wit_token = file_read[1].split(" ")[1]
+    # format to get a single token from the text file
+
+client = Wit(wit_token)
+client.message('set an alarm tomorrow at 7am')
+
+def receive_message(message):
+    symptoms = parse_message(message)
+
+def parse_message(message):
+    # parses the message through wit.ai
+    # when input is "I have a headache"
+    # output is
+    # {"_text":"I have a headache","entities":{"symptom":[{"confidence":0.98805916237107,"value":"headache","type":"value"}]},"msg_id":"0gFLp4hHKeJKvwspJ"}
+    message = client.message(message)
