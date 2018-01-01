@@ -30,6 +30,7 @@ TOKEN_NAME: TOKEN
 """
 from wit import Wit
 
+
 # used for debugging
 import logging
 logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(asctime)s - %(levelname)s- %(message)s')
@@ -49,6 +50,14 @@ client = Wit(wit_token)
 def receive_message(message):
     logging.debug(message)
     symptoms = parse_message(message)
+    search(symptoms)
+
+def search(symptoms):
+    from google import search
+    symptoms = ' '.join(symptoms)
+    symptoms_search = symptoms + " \"nhs\""
+    for url in search(symptoms_search, stop=20):
+        print(url)
 
 def parse_message(message):
     # parses the message through wit.ai
@@ -84,4 +93,6 @@ def remove_articles(message):
         if i not in ["and", "an", "a"]:
             return_msg.append(i)
     return return_msg
+
+receive_message("I have a headache")
 
