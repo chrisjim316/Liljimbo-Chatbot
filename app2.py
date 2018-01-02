@@ -14,7 +14,7 @@ if you google symptons and limit it to the NHS, it'll normally direct you to a p
 implemented version of a "symptom checker". "Symptom checker" api's already exist but they cost money
 this may not always work, but we'll deal with that in a second.
 Once we have a google search results, we accecpt the first result from google as the "illness".
-scrape the nhs webpage (they roughly all have the similar format) 
+scrape the nhs webpage (they roughly all have the similar format)
 
 scrape the nhs webpage for 3 things
 |name of illness| & |symptoms of illness| & |cure to illness|
@@ -29,8 +29,8 @@ Also, tokens are no longer stored in python files. They are stored in a tokens.t
 TOKEN_NAME: TOKEN
 """
 from wit import Wit
-
-
+import requests
+from bs4 import BeautifulSoup
 # used for debugging
 import logging
 logging.basicConfig(level=logging.DEBUG, filename='appLog.txt', format=' %(asctime)s - %(levelname)s- %(message)s')
@@ -39,7 +39,7 @@ with open("tokens.txt") as file:
     # gets tokens from token.txt
     file_read = file.read()
     file_read = file_read.split("\n")
-    
+
     wit_token = file_read[1].split(" ")[1]
     # format to get a single token from the text file
 
@@ -51,13 +51,58 @@ def receive_message(message):
     logging.debug(message)
     symptoms = parse_message(message)
     search(symptoms)
+def NHS_api(symptoms):
+    """
+    Takes a list of symptoms as input, performs the google search
+    uses the top 3 links and parses them using requests
+    and then selects the most approviate one based on criteria
+    and then returns that as a JSON object
 
-def search(symptoms):
-    from google import search
-    symptoms = ' '.join(symptoms)
-    symptoms_search = symptoms + " \"nhs\""
-    for url in search(symptoms_search, stop=20):
-        print(url)
+    somethings to note, most NHS pages on illnesses such as headaches are stored within a
+    div called div.article, so we only need to parse this one div, divide it into seperate
+    JSON values and then return that. I want to format it into JSON so this section can be used
+    for future things.
+    """
+    def search(symptoms):
+        # given a list of symptoms, google the symptoms and return top 3 results
+        from google import search
+        symptoms = ' '.join(symptoms)
+        symptoms_search = symptoms + " \"nhs\""
+        return (search(symptoms_search, stop=3))
+
+    def parse_websites(search):
+        # given an NHS website, parse it for illness name, description, symptoms and cure
+        list_of_request_objects = [requests.get(i) for i in search]
+        for item in list_of_request_objects:
+            if item == "<Response [404]>":
+                list_of_request_objects.remove(i)
+            else:
+                continue
+        # if objects are 404 errors, delete them from the list as it'll be useless to us.
+
+        # gets the contents of 3 requests objects and stores them in a list
+        list_of_contents = []
+        for i in range(3):
+            list_of_contents.append(list_of_request_objects[i].content)
+
+
+        # Beautiful soup section #
+
+        bs_objects = list(map(lambda x: BeautifulSoup(x, 'html.parser'), list_of_contents))
+        # makes beautiful soup objects (needed to parse) out of the requests
+
+        # here we begin the distinction between objects. Each article represents a different top-scoring webpage's "article" content.
+        article1 = bs_objects[0].findAll("div", {"class": "article"})
+        article2 = bs_objects[1].findAll("div", {"class": "article"})
+        article3 = bs_objects[2].findAll("div", {"class": "article"})
+
+        print(article1)
+
+    search_results = search(symptoms)
+    parse_websites(search_results)
+
+
+NHS_api("headache")
 
 def parse_message(message):
     # parses the message through wit.ai
@@ -94,5 +139,4 @@ def remove_articles(message):
             return_msg.append(i)
     return return_msg
 
-receive_message("I have a headache")
 
