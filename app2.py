@@ -58,6 +58,7 @@ class NHS_api(object):
 		self.symptoms = symptoms
 		self.urls = self.search(self.symptoms)
 		self.website_content = self.parse_websites(self.urls)
+		self.disease_name = self.get_info(self.website_content)
 		# self.disease name
 		# self.disease_symptoms
 		# self.description
@@ -95,9 +96,15 @@ class NHS_api(object):
 		article2 = bs_objects[1].findAll("div", {"class": "article"})
 		article3 = bs_objects[2].findAll("div", {"class": "article"})
 
+		article1 = article1[0]
+		article1 = article1.findAll("p")
+
+		text = [''.join(s.findAll(text=True))for s in article1.findAll('p')]
+		print(text)
 		return article1
-	def get_title(self, article)
-	
+	# def get_title(self, article)
+	def get_info(self, webpage):
+		return "a"
 
 
 def parse_message(message):
@@ -135,6 +142,5 @@ def remove_articles(message):
 			return_msg.append(i)
 	return return_msg
 
-symptoms = parse_message("I have a headache")
+symptoms = parse_message("I have a headache along with a high temperature, stiff neck, rash")
 obj = NHS_api(symptoms)
-obj.website_content
