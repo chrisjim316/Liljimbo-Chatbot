@@ -56,9 +56,9 @@ class NHS_api(object):
 
 	def __init__(self, symptoms):
 		self.symptoms = symptoms
-		self.urls = self.search(self.symptoms)
+		self.urls = list(self.search(self.symptoms))
 		self.website_content = self.parse_websites(self.urls)
-		self.disease_name = self.get_info(self.website_content)
+		#self.disease_name = self.get_info(self.website_content)
 		# self.disease name
 		# self.disease_symptoms
 		# self.description
@@ -68,9 +68,11 @@ class NHS_api(object):
 		from google import search
 		symptoms = ' '.join(symptoms)
 		symptoms_search = symptoms + " \"nhs\""
+		logging.debug(symptoms_search)
 		return (search(symptoms_search, stop=3))
 
 	def parse_websites(self, search):
+		logging.debug(search)
 		# given an NHS website, parse it for illness name, description, symptoms and cure
 		list_of_request_objects = [requests.get(i) for i in search]
 		for item in list_of_request_objects:
@@ -79,6 +81,7 @@ class NHS_api(object):
 			else:
 				continue
 		# if objects are 404 errors, delete them from the list as it'll be useless to us.
+
 
 		# gets the contents of 3 requests objects and stores them in a list
 		list_of_contents = []
@@ -92,16 +95,18 @@ class NHS_api(object):
 		# makes beautiful soup objects (needed to parse) out of the requests
 
 		# here we begin the distinction between objects. Each article represents a different top-scoring webpage's "article" content.
-		article1 = bs_objects[0].findAll("div", {"class": "article"})
+		article1 = bs_objects[0].find("div", {"class": "article"})
 		article2 = bs_objects[1].findAll("div", {"class": "article"})
 		article3 = bs_objects[2].findAll("div", {"class": "article"})
 
-		article1 = article1[0]
-		article1 = article1.findAll("p")
 
-		text = [''.join(s.findAll(text=True))for s in article1.findAll('p')]
-		print(text)
-		return article1
+		text = list(article1.get_text())
+		for i in text:
+			if "stock" in i.lower():
+				text.pop(i)
+		text = "".join(text)
+		logging.debug(text)
+		return(text)
 	# def get_title(self, article)
 	def get_info(self, webpage):
 		return "a"
@@ -144,3 +149,4 @@ def remove_articles(message):
 
 symptoms = parse_message("I have a headache along with a high temperature, stiff neck, rash")
 obj = NHS_api(symptoms)
+print(obj.website_content)
