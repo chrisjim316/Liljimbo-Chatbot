@@ -144,6 +144,12 @@ def receive_message(message):
 class NHS_api(object):
 
 	def __init__(self, symptoms):
+		"""
+		self.symptoms is a set of all symptoms
+		self.url is a list of all urls relating to those symptoms
+		self.website_content is the website content of the first self.url
+		self.disease_name is pretty much the entirety of the disease, it was miss-called "disease name
+		"""
 		self.symptoms = symptoms
 		self.urls = list(self.search(self.symptoms))
 		self.website_content = self.parse_websites(self.urls)
@@ -236,6 +242,5 @@ def remove_articles(message):
 			return_msg.append(i)
 	return return_msg
 
-symptoms = parse_message("I have a headache along with a high temperature, stiff neck, rash")
-obj = NHS_api(symptoms)
-print(obj.website_content)
+if __name__ == '__main__':
+	app.run(debug=True)
