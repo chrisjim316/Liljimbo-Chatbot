@@ -1,7 +1,6 @@
 requests==2.18.4
 Flask==0.12.2
 wit==4.3.0
-BeautifulSoup==3.2.1
 beautifulsoup4==4.6.0
 Jinja2==2.8
 MarkupSafe==0.23
