@@ -1,7 +1,6 @@
 myvenv/
 venv/
 appLog.txt/
-*.txt
 *.pyc
 
 

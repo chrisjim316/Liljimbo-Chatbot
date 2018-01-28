@@ -51,10 +51,7 @@ with open("tokens.txt") as file:
 	# format to get a single token from the text file
 
 # Clients
-
 client = Wit(wit_token)
-
-
 
 app = Flask(__name__)
 
