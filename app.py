@@ -55,6 +55,7 @@ with open("tokens.txt") as file:
 client = Wit(wit_token)
 
 
+
 app = Flask(__name__)
 
 
