@@ -87,7 +87,7 @@ def webhook():
 					message_text = messaging_event["message"]["text"]  # the message's text
 
 					nhs_object = NHS_api(message_text)
-					response = nhs_object.website_content()
+					response = nhs_object.website_content
 
 					send_message(sender_id, response)
 
@@ -243,6 +243,7 @@ def remove_articles(message):
 		if i not in ["and", "an", "a"]:
 			return_msg.append(i)
 	return return_msg
+
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -1713,3 +1713,227 @@ the white part of your eye is red
 
 
 
+ 2018-01-28 19:55:35,887 - DEBUG- h e a d a c h e "nhs"
+ 2018-01-28 19:55:40,932 - DEBUG- ['https://www.nhs.uk/conditions/headaches/', 'https://www.nhs.uk/conditions/tension-headaches/', 'https://www.nhs.uk/Livewell/headaches/Pages/Hormonalheadaches.aspx', 'https://www.nhs.uk/conditions/cluster-headaches/', 'https://www.nhs.uk/Livewell/headaches/Pages/Painkillerheadaches.aspx', 'https://www.nhs.uk/livewell/headaches/pages/headachetriggers.aspx', 'https://www.nhs.uk/conditions/sinus-headache/', 'https://www.nhs.uk/conditions/migraine/symptoms/', 'http://www.gosh.nhs.uk/medical-information/new-daily-persistent-headache', 'http://www.nhsdirect.wales.nhs.uk/encyclopaedia/h/article/headache,tensiontype/', 'http://www.gloshospitals.nhs.uk/en/Wards-and-Departments/Departments/Pain-Management/Different-Pains/Headache/', 'https://www.webmd.boots.com/migraines-headaches/guide/headaches-nausea']
+ 2018-01-28 19:55:40,937 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,094 - DEBUG- https://www.nhs.uk:443 "GET /conditions/headaches/ HTTP/1.1" 200 8034
+ 2018-01-28 19:55:41,103 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,233 - DEBUG- https://www.nhs.uk:443 "GET /conditions/tension-headaches/ HTTP/1.1" 200 9199
+ 2018-01-28 19:55:41,237 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,349 - DEBUG- https://www.nhs.uk:443 "GET /Livewell/headaches/Pages/Hormonalheadaches.aspx HTTP/1.1" 200 21889
+ 2018-01-28 19:55:41,355 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,464 - DEBUG- https://www.nhs.uk:443 "GET /conditions/cluster-headaches/ HTTP/1.1" 200 10330
+ 2018-01-28 19:55:41,469 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,620 - DEBUG- https://www.nhs.uk:443 "GET /Livewell/headaches/Pages/Painkillerheadaches.aspx HTTP/1.1" 200 22185
+ 2018-01-28 19:55:41,650 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,783 - DEBUG- https://www.nhs.uk:443 "GET /livewell/headaches/pages/headachetriggers.aspx HTTP/1.1" 200 23081
+ 2018-01-28 19:55:41,807 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:41,928 - DEBUG- https://www.nhs.uk:443 "GET /conditions/sinus-headache/ HTTP/1.1" 200 8865
+ 2018-01-28 19:55:41,934 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:55:42,053 - DEBUG- https://www.nhs.uk:443 "GET /conditions/migraine/symptoms/ HTTP/1.1" 200 9145
+ 2018-01-28 19:55:42,062 - DEBUG- Starting new HTTP connection (1): www.gosh.nhs.uk
+ 2018-01-28 19:55:42,460 - DEBUG- http://www.gosh.nhs.uk:80 "GET /medical-information/new-daily-persistent-headache HTTP/1.1" 200 11702
+ 2018-01-28 19:55:42,464 - DEBUG- Starting new HTTP connection (1): www.nhsdirect.wales.nhs.uk
+ 2018-01-28 19:55:42,589 - DEBUG- http://www.nhsdirect.wales.nhs.uk:80 "GET /encyclopaedia/h/article/headache,tensiontype/ HTTP/1.1" 200 15471
+ 2018-01-28 19:55:42,617 - DEBUG- Starting new HTTP connection (1): www.gloshospitals.nhs.uk
+ 2018-01-28 19:55:42,809 - DEBUG- http://www.gloshospitals.nhs.uk:80 "GET /en/Wards-and-Departments/Departments/Pain-Management/Different-Pains/Headache/ HTTP/1.1" 200 50234
+ 2018-01-28 19:55:42,880 - DEBUG- Starting new HTTPS connection (1): www.webmd.boots.com
+ 2018-01-28 19:55:43,305 - DEBUG- https://www.webmd.boots.com:443 "GET /migraines-headaches/guide/headaches-nausea HTTP/1.1" 200 None
+ 2018-01-28 19:55:43,442 - DEBUG- 
+Most headaches will go away on their own and aren't a sign of something more serious.
+How you can ease headaches yourself
+Headaches can last between 30 minutes and several hours.
+
+
+
+Do
+
+drink plenty of water
+get plenty of rest if you have a cold or the flu
+try to relax - stress can make headaches worse
+exercise when you can
+take paracetamol or ibuprofen
+
+
+
+
+
+Don't
+
+drink alcohol
+skip meals (even if you might not feel like eating anything)
+sleep more than you usually would - it can make the headache worse
+strain your eyes for a long time - for example, by looking at a screen
+
+
+
+
+
+
+See a GP if:
+
+your headache keeps coming back
+painkillers don't help and your headache gets worse
+you have a bad throbbing pain at the front or side of your head - this could be a migraine or, more rarely, a cluster headache
+you feel sick, vomit and find light or noise painful
+you get other symptoms - for example, your arms or legs feel numb or weak
+
+
+
+
+What can cause headaches
+The most common reasons are: 
+
+having a cold or the flu
+stress
+drinking too much alcohol
+bad posture
+eyesight problems
+not eating regular meals
+not drinking enough fluids (dehydration) 
+taking too many painkillers
+women having their period or menopause
+
+
+
+See a GP urgently if you have a severe headache and:
+
+your jaw hurts when eating
+blurred or double vision
+your scalp feels sore
+
+These could be signs that the arteries in your head and neck are inflamed. This needs urgent treatment.
+
+
+
+
+
+Call 999 or go to A&E if:
+
+you injured your head badly - for example, from a fall or accident
+the headache came on suddenly and is extremely painful
+
+You have an extremely painful headache and:
+
+sudden problems speaking or remembering things
+loss of vision
+you're feeling drowsy or confused
+you have a very high temperature, feel hot and shivery, and have a stiff neck or a rash
+the white part of your eye is red
+
+
+
+
+
+ 2018-01-28 19:56:16,910 - DEBUG- h e a d a c h e "nhs"
+ 2018-01-28 19:56:20,038 - DEBUG- ['https://www.nhs.uk/conditions/headaches/', 'https://www.nhs.uk/conditions/tension-headaches/', 'https://www.nhs.uk/Livewell/headaches/Pages/Hormonalheadaches.aspx', 'https://www.nhs.uk/conditions/cluster-headaches/', 'https://www.nhs.uk/Livewell/headaches/Pages/Painkillerheadaches.aspx', 'https://www.nhs.uk/livewell/headaches/pages/headachetriggers.aspx', 'https://www.nhs.uk/conditions/sinus-headache/', 'https://www.nhs.uk/conditions/migraine/symptoms/', 'http://www.gosh.nhs.uk/medical-information/new-daily-persistent-headache', 'http://www.nhsdirect.wales.nhs.uk/encyclopaedia/h/article/headache,tensiontype/', 'http://www.gloshospitals.nhs.uk/en/Wards-and-Departments/Departments/Pain-Management/Different-Pains/Headache/', 'https://www.webmd.boots.com/migraines-headaches/guide/headaches-nausea']
+ 2018-01-28 19:56:20,041 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,181 - DEBUG- https://www.nhs.uk:443 "GET /conditions/headaches/ HTTP/1.1" 200 8034
+ 2018-01-28 19:56:20,187 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,316 - DEBUG- https://www.nhs.uk:443 "GET /conditions/tension-headaches/ HTTP/1.1" 200 9199
+ 2018-01-28 19:56:20,322 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,446 - DEBUG- https://www.nhs.uk:443 "GET /Livewell/headaches/Pages/Hormonalheadaches.aspx HTTP/1.1" 200 21889
+ 2018-01-28 19:56:20,451 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,569 - DEBUG- https://www.nhs.uk:443 "GET /conditions/cluster-headaches/ HTTP/1.1" 200 10330
+ 2018-01-28 19:56:20,574 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,708 - DEBUG- https://www.nhs.uk:443 "GET /Livewell/headaches/Pages/Painkillerheadaches.aspx HTTP/1.1" 200 22185
+ 2018-01-28 19:56:20,713 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,826 - DEBUG- https://www.nhs.uk:443 "GET /livewell/headaches/pages/headachetriggers.aspx HTTP/1.1" 200 23081
+ 2018-01-28 19:56:20,850 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:20,990 - DEBUG- https://www.nhs.uk:443 "GET /conditions/sinus-headache/ HTTP/1.1" 200 8865
+ 2018-01-28 19:56:20,993 - DEBUG- Starting new HTTPS connection (1): www.nhs.uk
+ 2018-01-28 19:56:21,108 - DEBUG- https://www.nhs.uk:443 "GET /conditions/migraine/symptoms/ HTTP/1.1" 200 9145
+ 2018-01-28 19:56:21,112 - DEBUG- Starting new HTTP connection (1): www.gosh.nhs.uk
+ 2018-01-28 19:56:21,196 - DEBUG- http://www.gosh.nhs.uk:80 "GET /medical-information/new-daily-persistent-headache HTTP/1.1" 200 11702
+ 2018-01-28 19:56:21,199 - DEBUG- Starting new HTTP connection (1): www.nhsdirect.wales.nhs.uk
+ 2018-01-28 19:56:21,331 - DEBUG- http://www.nhsdirect.wales.nhs.uk:80 "GET /encyclopaedia/h/article/headache,tensiontype/ HTTP/1.1" 200 15471
+ 2018-01-28 19:56:21,359 - DEBUG- Starting new HTTP connection (1): www.gloshospitals.nhs.uk
+ 2018-01-28 19:56:21,525 - DEBUG- http://www.gloshospitals.nhs.uk:80 "GET /en/Wards-and-Departments/Departments/Pain-Management/Different-Pains/Headache/ HTTP/1.1" 200 50234
+ 2018-01-28 19:56:21,596 - DEBUG- Starting new HTTPS connection (1): www.webmd.boots.com
+ 2018-01-28 19:56:21,887 - DEBUG- https://www.webmd.boots.com:443 "GET /migraines-headaches/guide/headaches-nausea HTTP/1.1" 200 None
+ 2018-01-28 19:56:22,030 - DEBUG- 
+Most headaches will go away on their own and aren't a sign of something more serious.
+How you can ease headaches yourself
+Headaches can last between 30 minutes and several hours.
+
+
+
+Do
+
+drink plenty of water
+get plenty of rest if you have a cold or the flu
+try to relax - stress can make headaches worse
+exercise when you can
+take paracetamol or ibuprofen
+
+
+
+
+
+Don't
+
+drink alcohol
+skip meals (even if you might not feel like eating anything)
+sleep more than you usually would - it can make the headache worse
+strain your eyes for a long time - for example, by looking at a screen
+
+
+
+
+
+
+See a GP if:
+
+your headache keeps coming back
+painkillers don't help and your headache gets worse
+you have a bad throbbing pain at the front or side of your head - this could be a migraine or, more rarely, a cluster headache
+you feel sick, vomit and find light or noise painful
+you get other symptoms - for example, your arms or legs feel numb or weak
+
+
+
+
+What can cause headaches
+The most common reasons are: 
+
+having a cold or the flu
+stress
+drinking too much alcohol
+bad posture
+eyesight problems
+not eating regular meals
+not drinking enough fluids (dehydration) 
+taking too many painkillers
+women having their period or menopause
+
+
+
+See a GP urgently if you have a severe headache and:
+
+your jaw hurts when eating
+blurred or double vision
+your scalp feels sore
+
+These could be signs that the arteries in your head and neck are inflamed. This needs urgent treatment.
+
+
+
+
+
+Call 999 or go to A&E if:
+
+you injured your head badly - for example, from a fall or accident
+the headache came on suddenly and is extremely painful
+
+You have an extremely painful headache and:
+
+sudden problems speaking or remembering things
+loss of vision
+you're feeling drowsy or confused
+you have a very high temperature, feel hot and shivery, and have a stiff neck or a rash
+the white part of your eye is red
+
+
+
+
+
