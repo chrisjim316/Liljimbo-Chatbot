@@ -75,7 +75,7 @@ class NHS_api(object):
 
 	def search(self, symptoms):
 		# given a list of symptoms, google the symptoms and return top 3 results
-		from google import search
+		from app.google import search
 		symptoms = ' '.join(symptoms)
 		symptoms_search = symptoms + " \"nhs\""
 		logging.debug(symptoms_search)
