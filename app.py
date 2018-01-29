@@ -95,8 +95,7 @@ class NHS_api(object):
 
 		# gets the contents of 3 requests objects and stores them in a list
 		list_of_contents = []
-		for i in range(3):
-			list_of_contents.append(list_of_request_objects[i].content)
+		list_of_contents.append(list_of_request_objects[0].content)
 
 
 		# Beautiful soup section #
