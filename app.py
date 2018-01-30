@@ -106,8 +106,8 @@ class NHS_api(object):
 
 		# here we begin the distinction between objects. Each article represents a different top-scoring webpage's "article" content.
 		article1 = bs_objects[0].find("div", {"class": "article"})
-		article2 = bs_objects[1].findAll("div", {"class": "article"})
-		article3 = bs_objects[2].findAll("div", {"class": "article"})
+		# article2 = bs_objects[1].findAll("div", {"class": "article"})
+		# article3 = bs_objects[2].findAll("div", {"class": "article"})
 
 
 		text = list(article1.get_text())
