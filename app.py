@@ -92,32 +92,35 @@ class NHS_api(object):
 				continue
 		# if objects are 404 errors, delete them from the list as it'll be useless to us.
 
-
-		# gets the contents of 3 requests objects and stores them in a list
 		list_of_contents = []
 
 		list_of_contents.append(list_of_request_objects[0].content)
 
+		# gets the contents of 3 requests objects and stores them in a list
 
 		# Beautiful soup section #
 
-		#bs_objects = list(map(lambda x: BeautifulSoup(x, 'html.parser'), list_of_contents))
+		bs_objects = list(map(lambda x: BeautifulSoup(x, 'html.parser'), list_of_contents))
 		# makes beautiful soup objects (needed to parse) out of the requests
 
-		bs_objects = BeautifulSoup(list_of_contents[0], 'html.parser')
+		# bs_objects = BeautifulSoup(list_of_request_objects[0], 'html.parser')
+
 
 		# here we begin the distinction between objects. Each article represents a different top-scoring webpage's "article" content.
-		article1 = bs_objects.find("div", {"class": "article"})
+		article1 = bs_objects[0].find("div", {"class": "article"})
+		
 		# article2 = bs_objects[1].findAll("div", {"class": "article"})
 		# article3 = bs_objects[2].findAll("div", {"class": "article"})
 
 
 		text = list(article1.get_text())
+		"""
 		for i in text:
 			if "stock" in i.lower():
 				text.pop(i)
+		"""
 		text = "".join(text)
-		logging.debug(text)
+
 		return(text)
 	# def get_title(self, article)
 	def get_info(self, webpage):
@@ -190,7 +193,11 @@ def webhook():
 					recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
 					message_text = messaging_event["message"]["text"]  # the message's text
 
-					nhs_object = NHS_api(message_text)
+					message = parse_message(message_text)
+					message = list(message)
+					message = ''.join(message)
+
+					nhs_object = NHS_api(message)
 					response = nhs_object.website_content
 
 					send_message(sender_id, response)
@@ -246,7 +253,9 @@ def receive_message(message):
 	logging.debug(message)
 	symptoms = parse_message(message)
 	search(symptoms)
-	
+
+
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
