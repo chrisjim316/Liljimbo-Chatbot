@@ -101,11 +101,13 @@ class NHS_api(object):
 
 		# Beautiful soup section #
 
-		bs_objects = list(map(lambda x: BeautifulSoup(x, 'html.parser'), list_of_contents))
+		#bs_objects = list(map(lambda x: BeautifulSoup(x, 'html.parser'), list_of_contents))
 		# makes beautiful soup objects (needed to parse) out of the requests
 
+		bs_objects = BeautifulSoup(list_of_contents[0], 'html.parser')
+
 		# here we begin the distinction between objects. Each article represents a different top-scoring webpage's "article" content.
-		article1 = bs_objects[0].find("div", {"class": "article"})
+		article1 = bs_objects.find("div", {"class": "article"})
 		# article2 = bs_objects[1].findAll("div", {"class": "article"})
 		# article3 = bs_objects[2].findAll("div", {"class": "article"})
 
