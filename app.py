@@ -133,6 +133,8 @@ def parse_message(message):
 	# output is
 	# {"_text":"I have a headache","entities":{"symptom":[{"confidence":0.98805916237107,"value":"headache","type":"value"}]},"msg_id":"0gFLp4hHKeJKvwspJ"}
 	resp = client.message(message)
+	if "symptoms" not in resp:
+		exit(0)
 	confidence = resp["entities"]["symptom"][0]["confidence"]
 	symptoms = resp["entities"]["symptom"][0]["value"]
 	logging.debug(confidence)
