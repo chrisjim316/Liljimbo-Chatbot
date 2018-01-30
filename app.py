@@ -194,8 +194,6 @@ def webhook():
 					message_text = messaging_event["message"]["text"]  # the message's text
 
 					message = parse_message(message_text)
-					message = list(message)
-					message = ''.join(message)
 
 					nhs_object = NHS_api(message)
 					response = nhs_object.website_content
